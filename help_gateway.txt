@@ -1,0 +1,60 @@
+﻿
+­ƒª× Clawdbot 2026.1.24-3 (885167d) ÔÇö The only crab in your contacts you actually want to hear from. ­ƒª×
+
+Usage: clawdbot gateway [options] [command]
+
+Run the WebSocket Gateway
+
+Options:
+  --port <port>              Port for the gateway WebSocket
+  --bind <mode>              Bind mode
+                             ("loopback"|"lan"|"tailnet"|"auto"|"custom").
+                             Defaults to config gateway.bind (or loopback).
+  --token <token>            Shared token required in connect.params.auth.token
+                             (default: CLAWDBOT_GATEWAY_TOKEN env if set)
+  --auth <mode>              Gateway auth mode ("token"|"password")
+  --password <password>      Password for auth mode=password
+  --tailscale <mode>         Tailscale exposure mode ("off"|"serve"|"funnel")
+  --tailscale-reset-on-exit  Reset Tailscale serve/funnel configuration on
+                             shutdown (default: false)
+  --allow-unconfigured       Allow gateway start without gateway.mode=local in
+                             config (default: false)
+  --dev                      Create a dev config + workspace if missing (no
+                             BOOTSTRAP.md) (default: false)
+  --reset                    Reset dev config + credentials + sessions +
+                             workspace (requires --dev) (default: false)
+  --force                    Kill any existing listener on the target port
+                             before starting (default: false)
+  --verbose                  Verbose logging to stdout/stderr (default: false)
+  --claude-cli-logs          Only show claude-cli logs in the console (includes
+                             stdout/stderr) (default: false)
+  --ws-log <style>           WebSocket log style ("auto"|"full"|"compact")
+                             (default: "auto")
+  --compact                  Alias for "--ws-log compact" (default: false)
+  --raw-stream               Log raw model stream events to jsonl (default:
+                             false)
+  --raw-stream-path <path>   Raw stream jsonl path
+  -h, --help                 display help for command
+
+Commands:
+  run                        Run the WebSocket Gateway (foreground)
+  status                     Show gateway service status + probe the Gateway
+  install                    Install the Gateway service
+                             (launchd/systemd/schtasks)
+  uninstall                  Uninstall the Gateway service
+                             (launchd/systemd/schtasks)
+  start                      Start the Gateway service
+                             (launchd/systemd/schtasks)
+  stop                       Stop the Gateway service (launchd/systemd/schtasks)
+  restart                    Restart the Gateway service
+                             (launchd/systemd/schtasks)
+  call                       Call a Gateway method
+  usage-cost                 Fetch usage cost summary from session logs
+  health                     Fetch Gateway health
+  probe                      Show gateway reachability + discovery + health +
+                             status summary (local + remote)
+  discover                   Discover gateways via Bonjour (multicast local. +
+                             unicast clawdbot.internal.)
+
+Docs: https://docs.clawd.bot/cli/gateway
+

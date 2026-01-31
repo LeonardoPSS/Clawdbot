@@ -1,0 +1,121 @@
+bot:
+  name: AntigravityJobBot
+  mode: automatic   # automatic | semi-automatic
+  daily_application_limit: 10
+  headless: false
+
+
+
+profile:
+  role: "Estágio Administrativo"
+  level: "Estágio"
+  area: "Administrativo"
+  locations:
+    - "São Paulo"
+    - "Osasco"
+    - "Guarulhos"
+    - "Santo André"
+    - "São Bernardo do Campo"
+    - "Remoto"
+  keywords:
+    include:
+      - administrativo
+      - estagi
+      - assistente
+      - financeiro
+      - escritorio
+      - auxiliar
+      - suporte
+      - recepcao
+      - atendimento
+      - backoffice
+      - excel
+      - operacional
+      - faturamento
+    exclude:
+      - vendas
+      - comissionado
+      - PJ
+      - senior
+      - pleno
+      - direito
+      - advocacia
+      - comercial
+      - corretor
+      - PCD
+      - deficiencia
+
+resume:
+  file_path: "./assets/curriculo.pdf"
+  language: "pt-BR"
+  auto_fill: true
+
+platforms:
+  linkedin:
+    enabled: true
+    auto_apply: true
+  gupy:
+    enabled: false
+  vagas_com:
+    enabled: false
+
+behavior:
+  human_like: true
+  typing_delay_ms:
+    min: 80
+    max: 180
+  action_delay_seconds:
+    min: 5
+    max: 15
+  scroll_simulation: true
+  evolution:
+    enabled: true
+    daily_post_limit: 1
+    daily_connection_limit: 5
+    engagement_keywords:
+        - "inovação"
+        - "carreira"
+        - "tecnologia"
+        - "administrativo"
+
+security:
+  rotate_user_agent: true
+  randomize_sessions: true
+  max_errors_per_day: 5
+
+logging:
+  enabled: true
+  save_path: "./data"
+  export_csv: true
+
+notifications:
+  email:
+    enabled: false
+  telegram:
+    enabled: true
+
+linkedin_automation:
+  daily_posts:
+    enabled: true
+    time: "09:00"
+    topics:
+      - "Inteligência Artificial"
+      - "Carreira e Desenvolvimento"
+      - "Produtividade"
+      - "Tendências Tech"
+      - "Dicas Profissionais"
+      - "Mercado de Trabalho"
+      - "Soft Skills"
+  engagement:
+    comments_per_day: 5
+    likes_per_day: 15
+    follows_per_day: 10
+    target_profiles:
+      - "Recruiter"
+      - "HR Manager"
+      - "Tech Lead"
+      - "CEO"
+  image_generation:
+    enabled: true
+    style: "professional, modern, minimalist, tech-themed"
+

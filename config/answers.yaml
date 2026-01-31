@@ -1,0 +1,24 @@
+# BASE DE CONHECIMENTO - RESPOSTAS PARA PERGUNTAS
+# O bot tentará encontrar palavras-chave na pergunta e preencher com estas respostas.
+
+questions:
+  - keywords: ["pretensão", "salarial", "salary", "expectation"]
+    answer: "R$ 2.000,00"
+    
+  - keywords: ["por que", "why", "motivated", "motivado", "conectar"]
+    answer: "Possuo grande interesse em crescer na área administrativa, com foco em processos operacionais e backoffice, onde já possuo experiência prática."
+    
+  - keywords: ["experiência", "experience", "anos", "years", "time"]
+    answer: "2"
+    
+  - keywords: ["disponibilidade", "availability", "start"]
+    answer: "Imediata"
+    
+  - keywords: ["excel", "ferramenta", "v-lookup", "dinâmica"]
+    answer: "Intermediário/Avançado"
+    
+  - keywords: ["ingles", "inglês", "english"]
+    answer: "Básico"
+
+  - keywords: ["conclusão", "formação", "graduação", "concluiu"]
+    answer: "Junho/2027"

@@ -1,0 +1,13 @@
+﻿
+­ƒª× Clawdbot 2026.1.24-3 (885167d) ÔÇö Pairing codes exist because even bots believe in consentÔÇöand good security hygiene.
+
+Usage: clawdbot browser serve [options]
+
+Run a standalone browser control server (for remote gateways)
+
+Options:
+  --bind <host>    Bind host (default: 127.0.0.1)
+  --port <port>    Bind port (default: from browser.controlUrl)
+  --token <token>  Require Authorization: Bearer <token> (required when binding
+                   non-loopback)
+  -h, --help       display help for command

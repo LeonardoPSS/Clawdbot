@@ -1,0 +1,94 @@
+﻿
+­ƒª× Clawdbot 2026.1.24-3 (885167d) ÔÇö I speak fluent bash, mild sarcasm, and aggressive tab-completion energy.
+
+Usage: clawdbot browser [options] [command]
+
+Manage clawd's dedicated browser (Chrome/Chromium)
+
+Options:
+  --url <url>               Override browser control URL (default from
+                            ~/.clawdbot/clawdbot.json)
+  --browser-profile <name>  Browser profile name (default from config)
+  --json                    Output machine-readable JSON (default: false)
+  -h, --help                display help for command
+
+Commands:
+  status                    Show browser status
+  start                     Start the browser (no-op if already running)
+  stop                      Stop the browser (best-effort)
+  reset-profile             Reset browser profile (moves it to Trash)
+  tabs                      List open tabs
+  tab                       Tab shortcuts (index-based)
+  open                      Open a URL in a new tab
+  focus                     Focus a tab by target id (or unique prefix)
+  close                     Close a tab (target id optional)
+  profiles                  List all browser profiles
+  create-profile            Create a new browser profile
+  delete-profile            Delete a browser profile
+  extension                 Chrome extension helpers
+  serve                     Run a standalone browser control server (for remote
+                            gateways)
+  screenshot                Capture a screenshot (MEDIA:<path>)
+  snapshot                  Capture a snapshot (default: ai; aria is the
+                            accessibility tree)
+  navigate                  Navigate the current tab to a URL
+  resize                    Resize the viewport
+  click                     Click an element by ref from snapshot
+  type                      Type into an element by ref from snapshot
+  press                     Press a key
+  hover                     Hover an element by ai ref
+  scrollintoview            Scroll an element into view by ref from snapshot
+  drag                      Drag from one ref to another
+  select                    Select option(s) in a select element
+  upload                    Arm file upload for the next file chooser
+  waitfordownload           Wait for the next download (and save it)
+  download                  Click a ref and save the resulting download
+  dialog                    Arm the next modal dialog (alert/confirm/prompt)
+  fill                      Fill a form with JSON field descriptors
+  wait                      Wait for time, selector, URL, load state, or JS
+                            conditions
+  evaluate                  Evaluate a function against the page or a ref
+  console                   Get recent console messages
+  pdf                       Save page as PDF
+  responsebody              Wait for a network response and return its body
+  highlight                 Highlight an element by ref
+  errors                    Get recent page errors
+  requests                  Get recent network requests (best-effort)
+  trace                     Record a Playwright trace
+  cookies                   Read/write cookies
+  storage                   Read/write localStorage/sessionStorage
+  set                       Browser environment settings
+
+Examples:
+  clawdbot browser status
+  clawdbot browser start
+  clawdbot browser stop
+  clawdbot browser tabs
+  clawdbot browser open https://example.com
+  clawdbot browser focus abcd1234
+  clawdbot browser close abcd1234
+  clawdbot browser screenshot
+  clawdbot browser screenshot --full-page
+  clawdbot browser screenshot --ref 12
+  clawdbot browser snapshot
+  clawdbot browser snapshot --format aria --limit 200
+  clawdbot browser snapshot --efficient
+  clawdbot browser snapshot --labels
+  clawdbot browser navigate https://example.com
+  clawdbot browser resize 1280 720
+  clawdbot browser click 12 --double
+  clawdbot browser type 23 "hello" --submit
+  clawdbot browser press Enter
+  clawdbot browser hover 44
+  clawdbot browser drag 10 11
+  clawdbot browser select 9 OptionA OptionB
+  clawdbot browser upload /tmp/file.pdf
+  clawdbot browser fill --fields '[{"ref":"1","value":"Ada"}]'
+  clawdbot browser dialog --accept
+  clawdbot browser wait --text "Done"
+  clawdbot browser evaluate --fn '(el) => el.textContent' --ref 7
+  clawdbot browser console --level error
+  clawdbot browser pdf
+
+Docs: https://docs.clawd.bot/cli/browser
+

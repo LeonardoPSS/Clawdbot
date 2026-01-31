@@ -1,0 +1,28 @@
+﻿node.exe : 2026-01-31T
+15:17:46.956Z Gateway 
+start blocked: set 
+gateway.mode=local 
+(current: unset) or 
+pass 
+--allow-unconfigured.
+No C:\Users\leona\AppD
+ata\Roaming\npm\clawdb
+ot.ps1:24 caractere:5
++     & "node$exe"  "$
+basedir/node_modules/c
+lawdbot/dist/entry.js"
+ $arg ...
++     ~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
+~~~~~
+    + CategoryInfo    
+          : NotSpeci  
+  fied: (2026-01-31   
+ T15:1...w-unconfi    
+gured.:String) []    
+, RemoteException
+    + FullyQualifiedE 
+   rrorId : NativeCo  
+  mmandError
+ 

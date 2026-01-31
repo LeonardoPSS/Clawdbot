@@ -1,0 +1,24 @@
+﻿
+­ƒª× Clawdbot 2026.1.24-3 (885167d) ÔÇö I'm not magicÔÇöI'm just extremely persistent with retries and coping strategies.
+
+Usage: clawdbot channels [options] [command]
+
+Manage chat channel accounts
+
+Options:
+  -h, --help    display help for command
+
+Commands:
+  list          List configured channels + auth profiles
+  status        Show gateway channel status (use status --deep for local)
+  capabilities  Show provider capabilities (intents/scopes + supported features)
+  resolve       Resolve channel/user names to IDs
+  logs          Show recent channel logs from the gateway log file
+  add           Add or update a channel account
+  remove        Disable or delete a channel account
+  login         Link a channel account (if supported)
+  logout        Log out of a channel session (if supported)
+  help          display help for command
+
+Docs: https://docs.clawd.bot/cli/channels
+

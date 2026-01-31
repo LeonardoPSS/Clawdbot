@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  bot:
+    build: .
+    container_name: antigravity-job-bot
+    volumes:
+      - ./browser_profile:/app/browser_profile
+      - ./data:/app/data
+      - ./config:/app/config
+      - ./assets:/app/assets
+    restart: unless-stopped
+    # If running on a server, we typically want headless: true in settings.yaml
