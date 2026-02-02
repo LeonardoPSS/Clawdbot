@@ -1,0 +1,158 @@
+<MPD xmlns="urn:mpeg:dash:schema:mpd:2011" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:mpeg:dash:schema:mpd:2011 http://standards.iso.org/ittf/PubliclyAvailableStandards/MPEG-DASH_schema_files/DASH-MPD.xsd" id="D4D05AQHseag-Nt6h5g" profiles="urn:mpeg:dash:profile:isoff-on-demand:2011" type="static" mediaPresentationDuration="PT1M39.366S" minBufferTime="PT1.5S">
+  <Period duration="PT1M39.366S">
+    <AdaptationSet contentType="video" segmentAlignment="true" codecs="avc1.42001e,mp4a.40.2">
+      <Representation id="B4DZwUiL_eIsAA-" bandwidth="624590" width="720" height="1280" codecs="avc1.42001e,mp4a.40.2" sar="9:16" frameRate="30/1" mimeType="video/iso.segment" qualityRanking="1">
+        <SegmentList duration="4">
+          <Initialization sourceURL="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-2Mbps-premium-quality-analysis/B4DZwUiL_eIsAA-/1/1769871045334?e=1770604191&amp;v=beta&amp;t=xQOHltvifDiSPUAx4BzQMKI2cNAl_7GvrH1LQ5WUuDo"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-2Mbps-premium-quality-analysis/B4DZwUiL_eIsAA-/2/1769871045334?e=1770604191&amp;v=beta&amp;t=s_m8mtGRbMJnIqm8bzxfm6e69ajwXX1Ny3dmK6ACCCY"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-2Mbps-premium-quality-analysis/B4DZwUiL_eIsAA-/3/1769871045334?e=1770604191&amp;v=beta&amp;t=yAW15iklINjEpLfbpSbUfq4qMMDWT_3045s21eBrXSs"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-2Mbps-premium-quality-analysis/B4DZwUiL_eIsAA-/4/1769871045334?e=1770604191&amp;v=beta&amp;t=D76DmlwVv6P4sOd6anAFCD3zwbD1R2ybSyFhQ7JRUhc"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-2Mbps-premium-quality-analysis/B4DZwUiL_eIsAA-/5/1769871045334?e=1770604191&amp;v=beta&amp;t=wb0vRLj8sAyC-DlSMwoWSL8VExw_mnQQQfTF1NrlcDg"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-2Mbps-premium-quality-analysis/B4DZwUiL_eIsAA-/6/1769871045334?e=1770604191&amp;v=beta&amp;t=FTABRMA5tFnsb40GaplCa7-gOZ3KjbLTis5Tt0iOaFY"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-2Mbps-premium-quality-analysis/B4DZwUiL_eIsAA-/7/1769871045334?e=1770604191&amp;v=beta&amp;t=N91d7D4JeHGHaBb30cZdxMTMqbt3lp0NvWIwS4vkfEw"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-2Mbps-premium-quality-analysis/B4DZwUiL_eIsAA-/8/1769871045334?e=1770604191&amp;v=beta&amp;t=9Br3t7wRiv-c1GUBH9a_IrraIw6F3i0VijrBa9UflqI"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-2Mbps-premium-quality-analysis/B4DZwUiL_eIsAA-/9/1769871045334?e=1770604191&amp;v=beta&amp;t=nWVBPFyyre-z-L_jFVoNaRMeY3pI60lfThkivc0dKDw"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-2Mbps-premium-quality-analysis/B4DZwUiL_eIsAA-/10/1769871045334?e=1770604191&amp;v=beta&amp;t=PIG94KwrUb4fpSRhbSz8ECOar8pIcf_cNBkpZTodjzs"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-2Mbps-premium-quality-analysis/B4DZwUiL_eIsAA-/11/1769871045334?e=1770604191&amp;v=beta&amp;t=TZPTrN6HybmpHFjutWauvGvKyIKKwV39gbcaOtcIoUc"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-2Mbps-premium-quality-analysis/B4DZwUiL_eIsAA-/12/1769871045334?e=1770604191&amp;v=beta&amp;t=9iJuZahYOIpvEKsNMFH5oBnPbyRwmQPAAMzIGWIyGO0"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-2Mbps-premium-quality-analysis/B4DZwUiL_eIsAA-/13/1769871045334?e=1770604191&amp;v=beta&amp;t=JBRcUhcvHDpBQ4xqtxfu32pMHvDay5IJoWXOOLu02sY"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-2Mbps-premium-quality-analysis/B4DZwUiL_eIsAA-/14/1769871045334?e=1770604191&amp;v=beta&amp;t=DDBNYvAAhD5SKUZznLs38nybDTLv7Jn13dIa4KaIfoU"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-2Mbps-premium-quality-analysis/B4DZwUiL_eIsAA-/15/1769871045334?e=1770604191&amp;v=beta&amp;t=gCKXXeFcqloJLRGWec7XVOKSI-ke7D2dJm9WvTjR63Q"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-2Mbps-premium-quality-analysis/B4DZwUiL_eIsAA-/16/1769871045334?e=1770604191&amp;v=beta&amp;t=hbuSnBFrkPQsrevmwxP9KBR5s0uz8HXaPd9DCYgEnSM"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-2Mbps-premium-quality-analysis/B4DZwUiL_eIsAA-/17/1769871045334?e=1770604191&amp;v=beta&amp;t=vOIKl7jD6K4j9cjDjHTp1UDbg-VIyGHocopKLTBfSAE"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-2Mbps-premium-quality-analysis/B4DZwUiL_eIsAA-/18/1769871045334?e=1770604191&amp;v=beta&amp;t=SrhJuebOXXux9lTxH7jTc5sENGALlHVZwNMW5BCJSR0"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-2Mbps-premium-quality-analysis/B4DZwUiL_eIsAA-/19/1769871045334?e=1770604191&amp;v=beta&amp;t=Pftr4mvWgDYbU9rxao6kh57byO8x3VMtJpcqKXfcvA4"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-2Mbps-premium-quality-analysis/B4DZwUiL_eIsAA-/20/1769871045334?e=1770604191&amp;v=beta&amp;t=oZH7jrlqUDEnU81wsnE16dvwpbrAkoEk7a00RV447KM"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-2Mbps-premium-quality-analysis/B4DZwUiL_eIsAA-/21/1769871045334?e=1770604191&amp;v=beta&amp;t=iFD-Ivgj8wZ_wg4ytdYJHSvehde2B1ym2bbGWEDuQIg"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-2Mbps-premium-quality-analysis/B4DZwUiL_eIsAA-/22/1769871045334?e=1770604191&amp;v=beta&amp;t=aEbUWFP33q9fNiNiHzVhPiR3A03BwDVRt3yqXLd9OyQ"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-2Mbps-premium-quality-analysis/B4DZwUiL_eIsAA-/23/1769871045334?e=1770604191&amp;v=beta&amp;t=U58czKkXhvcmwQPfIowbPUkfeprVfr1kAtfz0CR2bzw"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-2Mbps-premium-quality-analysis/B4DZwUiL_eIsAA-/24/1769871045334?e=1770604191&amp;v=beta&amp;t=rRD7UK8bTx_fU3N7poTO-ExuoEUFQln9VfUmb-eKpt8"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-2Mbps-premium-quality-analysis/B4DZwUiL_eIsAA-/25/1769871045334?e=1770604191&amp;v=beta&amp;t=PdqeqDUc7oDzYxC6ZxhASsY9sHbsegD2ugS0FJnqogU"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-2Mbps-premium-quality-analysis/B4DZwUiL_eIsAA-/26/1769871045334?e=1770604191&amp;v=beta&amp;t=fFQoOXFio066gcfmkHA6fSVrcsxf7DpsvR3Wnzo9m2k"/>
+        </SegmentList>
+      </Representation>
+      <Representation id="B4DZwUg43pGQD8-" bandwidth="307268" width="540" height="960" codecs="avc1.42001e,mp4a.40.2" sar="9:16" frameRate="30/1" mimeType="video/iso.segment" qualityRanking="2">
+        <SegmentList duration="4">
+          <Initialization sourceURL="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-540p-quality-analysis/B4DZwUg43pGQD8-/1/1769870707230?e=1770604191&amp;v=beta&amp;t=zQAkLAJK-EBbQha4xNulGGmOxPtiEswjkpl8sfj0M2Y"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-540p-quality-analysis/B4DZwUg43pGQD8-/2/1769870707230?e=1770604191&amp;v=beta&amp;t=vo2lIsczNTVQcFkARJcCWICmAlnryG1tkbwjci0r-Xo"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-540p-quality-analysis/B4DZwUg43pGQD8-/3/1769870707230?e=1770604191&amp;v=beta&amp;t=U3_anPm7_uXzAgvH_v1tpyvCr3OBn9RxJByeJWTHqsk"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-540p-quality-analysis/B4DZwUg43pGQD8-/4/1769870707230?e=1770604191&amp;v=beta&amp;t=IXlS0yKEQTT5k32Iz3ZQOkZzdtZqmcQO53bT_PmvPHM"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-540p-quality-analysis/B4DZwUg43pGQD8-/5/1769870707230?e=1770604191&amp;v=beta&amp;t=Ir1dJQOy7Prn5jzV5squgQlqOYkYMMLjmILl3F9Q-3A"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-540p-quality-analysis/B4DZwUg43pGQD8-/6/1769870707230?e=1770604191&amp;v=beta&amp;t=0HRd96GBQuJbMLlEn0IA2us67ubhFcwv_odgZUq-Jxg"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-540p-quality-analysis/B4DZwUg43pGQD8-/7/1769870707230?e=1770604191&amp;v=beta&amp;t=gP6j1ikB5yct7-lJUqREd63hOWh9QSLRxrlJqHCxQ1E"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-540p-quality-analysis/B4DZwUg43pGQD8-/8/1769870707230?e=1770604191&amp;v=beta&amp;t=VimKJhNFIF4nbHIr8yTNKbe9jveOUAimyIuodnPsdpw"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-540p-quality-analysis/B4DZwUg43pGQD8-/9/1769870707230?e=1770604191&amp;v=beta&amp;t=KWliL8TcGEbGe-JG4gSOVh3Y_xK_7Iws8zKy-F2Zd6M"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-540p-quality-analysis/B4DZwUg43pGQD8-/10/1769870707230?e=1770604191&amp;v=beta&amp;t=YzMb9xQ-mjK2LSgE2dhvRWCHM5XhfU81b85xVm56oUM"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-540p-quality-analysis/B4DZwUg43pGQD8-/11/1769870707230?e=1770604191&amp;v=beta&amp;t=Tc3im-KIH6hneX72QZv2ldSHVc1vlR4QbtZEE4_4jPA"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-540p-quality-analysis/B4DZwUg43pGQD8-/12/1769870707230?e=1770604191&amp;v=beta&amp;t=LLe-3zBsqdADh8XUlFpVTi-dzBsgaszIxeexEoYwBpE"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-540p-quality-analysis/B4DZwUg43pGQD8-/13/1769870707230?e=1770604191&amp;v=beta&amp;t=FCbMxY9H6_pd851Q9vCa4tnDBdEAMhDMmO83DmcGXHg"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-540p-quality-analysis/B4DZwUg43pGQD8-/14/1769870707230?e=1770604191&amp;v=beta&amp;t=PTcs7m9L9JE0KUDgG8b_p3uWnU4h1dptXWniumC47_Y"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-540p-quality-analysis/B4DZwUg43pGQD8-/15/1769870707230?e=1770604191&amp;v=beta&amp;t=RqjdqUuYwH_SP9SNbjYYrnHmslbtF8ctUQvs5LZugPQ"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-540p-quality-analysis/B4DZwUg43pGQD8-/16/1769870707230?e=1770604191&amp;v=beta&amp;t=PmTgexqDZmBuf7a_76N0MWp3vqSs1IrXtoUN3KGBykc"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-540p-quality-analysis/B4DZwUg43pGQD8-/17/1769870707230?e=1770604191&amp;v=beta&amp;t=v5Ti3Ig54EgerldbsPW0TbGRrVJmj4ikO12GvCFvg4Y"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-540p-quality-analysis/B4DZwUg43pGQD8-/18/1769870707230?e=1770604191&amp;v=beta&amp;t=LkNc83noWjkO9oPUCPbdxgNDSFiqJJcaOpMSqWGFUfo"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-540p-quality-analysis/B4DZwUg43pGQD8-/19/1769870707230?e=1770604191&amp;v=beta&amp;t=ogCcCFKA7R5gkYK79j-mJNtcHAOerBjqiwb17Xf5qZs"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-540p-quality-analysis/B4DZwUg43pGQD8-/20/1769870707230?e=1770604191&amp;v=beta&amp;t=rRmxVOpTYvwcMMngCULrlxhQp4AP30XwinDLzw4CLr0"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-540p-quality-analysis/B4DZwUg43pGQD8-/21/1769870707230?e=1770604191&amp;v=beta&amp;t=7YPsSQBGlmuuwNA64NrQ5RLF-f6wreaC6iV9TgRhT-A"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-540p-quality-analysis/B4DZwUg43pGQD8-/22/1769870707230?e=1770604191&amp;v=beta&amp;t=CatIGcu2U5Gkc87XGAHC5YBF4MUAhLM-EmANE7uppI4"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-540p-quality-analysis/B4DZwUg43pGQD8-/23/1769870707230?e=1770604191&amp;v=beta&amp;t=3dECX4-1PetPV8-RmSjrfb0_XiGZGKWa_p4m90ggI8I"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-540p-quality-analysis/B4DZwUg43pGQD8-/24/1769870707230?e=1770604191&amp;v=beta&amp;t=vsy64aD3NkDmPHCT1WjL1wW4RB8uuy82MDSSm9-KVek"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-540p-quality-analysis/B4DZwUg43pGQD8-/25/1769870707230?e=1770604191&amp;v=beta&amp;t=5laofsOL2QpncYMJUhIgqXo4d4huZ5-mcd44CS9zmW0"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-540p-quality-analysis/B4DZwUg43pGQD8-/26/1769870707230?e=1770604191&amp;v=beta&amp;t=GqLBuafs20i3xl9avRMEfwfuilWKybajY56Qgi457Gc"/>
+        </SegmentList>
+      </Representation>
+      <Representation id="B4DZwUg43pGQEA-" bandwidth="240204" width="480" height="854" codecs="avc1.42001e,mp4a.40.2" sar="9:16" frameRate="30/1" mimeType="video/iso.segment" qualityRanking="3">
+        <SegmentList duration="4">
+          <Initialization sourceURL="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-480p-quality-analysis/B4DZwUg43pGQEA-/1/1769870704488?e=1770604191&amp;v=beta&amp;t=to4XyQb6rYYdajSD9IOYS9YvR35MG7RBR2NHNdsykAQ"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-480p-quality-analysis/B4DZwUg43pGQEA-/2/1769870704488?e=1770604191&amp;v=beta&amp;t=LMp2l7O_P5UL5TiDSvjUq_WfJLaH2-kLV2fyrV9KFu8"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-480p-quality-analysis/B4DZwUg43pGQEA-/3/1769870704488?e=1770604191&amp;v=beta&amp;t=5dT_ViiU5xZACaopIhKROVRUCN2QJcM4cbJcXSrLSKo"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-480p-quality-analysis/B4DZwUg43pGQEA-/4/1769870704488?e=1770604191&amp;v=beta&amp;t=jINR6Hhgc1QvrzRUGi5D4mNPW2TyVUfwPpHGaNBE_-Y"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-480p-quality-analysis/B4DZwUg43pGQEA-/5/1769870704488?e=1770604191&amp;v=beta&amp;t=lRwh1koutw2kTjGAPCeY8La-lj1ktMKlkbQZTurGqoQ"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-480p-quality-analysis/B4DZwUg43pGQEA-/6/1769870704488?e=1770604191&amp;v=beta&amp;t=pN-azP4Vm47Eoh_Uvo2JcuVJ5Skn0tPu2rYv8PxVtsU"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-480p-quality-analysis/B4DZwUg43pGQEA-/7/1769870704488?e=1770604191&amp;v=beta&amp;t=y7HhqjLiYVaj-zzVGeFu-1tTQkaalKY8agbaAuUzALc"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-480p-quality-analysis/B4DZwUg43pGQEA-/8/1769870704488?e=1770604191&amp;v=beta&amp;t=2TTxxx_DVU_Dc6oC6OY8cBJOjgGusjTXhltysd7k6YI"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-480p-quality-analysis/B4DZwUg43pGQEA-/9/1769870704488?e=1770604191&amp;v=beta&amp;t=iprykT-kht_A4VmyzOP_rc2oiGZW6unGK8Oqe_laqHw"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-480p-quality-analysis/B4DZwUg43pGQEA-/10/1769870704488?e=1770604191&amp;v=beta&amp;t=BzMTCm-u24GoT5WG-ImlJwjHSO8s6lC3kObDQ6sf8T4"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-480p-quality-analysis/B4DZwUg43pGQEA-/11/1769870704488?e=1770604191&amp;v=beta&amp;t=9RG60GTRVsntRKrN8xVHbxkZzI3LctohRe6p5JiMi_0"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-480p-quality-analysis/B4DZwUg43pGQEA-/12/1769870704488?e=1770604191&amp;v=beta&amp;t=FA8sJ4jy_FgAJ4p_6I9evrc4vmwn_N3z8Rc6k4RWb9U"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-480p-quality-analysis/B4DZwUg43pGQEA-/13/1769870704488?e=1770604191&amp;v=beta&amp;t=0nJ4Tu1fOdw0ffp1XvhhHu6hDqdyZDoj-Twb7LcGQIQ"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-480p-quality-analysis/B4DZwUg43pGQEA-/14/1769870704488?e=1770604191&amp;v=beta&amp;t=NfpPHtL1pikSAqHzLZEqKNWP2n_yZhSRoUCuN-MGoUo"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-480p-quality-analysis/B4DZwUg43pGQEA-/15/1769870704488?e=1770604191&amp;v=beta&amp;t=J30aqC6013teRZJC2LyCtLfp2pVRXbUC831nn5DNYrU"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-480p-quality-analysis/B4DZwUg43pGQEA-/16/1769870704488?e=1770604191&amp;v=beta&amp;t=gHEqB3bca6_WrMPVSJxLHNh2sDFdpT2mNFY6Pl4RQwE"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-480p-quality-analysis/B4DZwUg43pGQEA-/17/1769870704488?e=1770604191&amp;v=beta&amp;t=1pdXerAT5YPPqKsMfUiP4H921y7TsDii1vU7pvNFCU0"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-480p-quality-analysis/B4DZwUg43pGQEA-/18/1769870704488?e=1770604191&amp;v=beta&amp;t=Al04JBWqLhkFYIHgyMUZ_aKnAiTM92o6hJTjIIC-q6U"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-480p-quality-analysis/B4DZwUg43pGQEA-/19/1769870704488?e=1770604191&amp;v=beta&amp;t=fDOtg8CyBTRo0o62zOJnW1qv493Dndpns9slx8lvkSs"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-480p-quality-analysis/B4DZwUg43pGQEA-/20/1769870704488?e=1770604191&amp;v=beta&amp;t=vV_qoOezNc5-2PaU_ae5lnLE0uKrEcfz6sqoy4W1_iI"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-480p-quality-analysis/B4DZwUg43pGQEA-/21/1769870704488?e=1770604191&amp;v=beta&amp;t=oHOQYeQ0J_1IboYsp45cWbLiKKDS_aFpqSrRc61QX1Y"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-480p-quality-analysis/B4DZwUg43pGQEA-/22/1769870704488?e=1770604191&amp;v=beta&amp;t=OXGXI4nCVdpqU5-Si-zjcq2OD-u4qjNKfUHxQD6k54I"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-480p-quality-analysis/B4DZwUg43pGQEA-/23/1769870704488?e=1770604191&amp;v=beta&amp;t=c61teMiBBdzehp04EOLuSi81gQ7MvEhyHJ8B8PCVCn8"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-480p-quality-analysis/B4DZwUg43pGQEA-/24/1769870704488?e=1770604191&amp;v=beta&amp;t=iRQK84P7Z4VyXIgjoNPDbaq8X5HRqkppd_IJOQxG7cE"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-480p-quality-analysis/B4DZwUg43pGQEA-/25/1769870704488?e=1770604191&amp;v=beta&amp;t=KDSwRemZHScghwykpEZA43hA-CPG0XEY_wAw9voNwPc"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-480p-quality-analysis/B4DZwUg43pGQEA-/26/1769870704488?e=1770604191&amp;v=beta&amp;t=yOmThrtmshjbdeY5_JpIyOUhqs6ifvu9DCXWMJ2Y-5U"/>
+        </SegmentList>
+      </Representation>
+      <Representation id="B4DZwUg43pGQEI-" bandwidth="182050" width="360" height="640" codecs="avc1.42001e,mp4a.40.2" sar="9:16" frameRate="30/1" mimeType="video/iso.segment" qualityRanking="4">
+        <SegmentList duration="4">
+          <Initialization sourceURL="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-360p-quality-analysis/B4DZwUg43pGQEI-/1/1769870705561?e=1770604191&amp;v=beta&amp;t=Afo0Qsu5JcL4-z7c9MYbcDkaw5HKt3avCNa0BaMzeYM"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-360p-quality-analysis/B4DZwUg43pGQEI-/2/1769870705561?e=1770604191&amp;v=beta&amp;t=evBfDyOgyXmakfLNHsKPehQp2W6tszuyGUYy2hyEZFU"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-360p-quality-analysis/B4DZwUg43pGQEI-/3/1769870705561?e=1770604191&amp;v=beta&amp;t=R3SAN2zZVyJXrWmbFT13To3alQfh6AbW2D6LYlYY9SY"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-360p-quality-analysis/B4DZwUg43pGQEI-/4/1769870705561?e=1770604191&amp;v=beta&amp;t=JE93nYwbhUzhDF6oNT0BzI7as5hb4EwCXJtPBbrqy4U"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-360p-quality-analysis/B4DZwUg43pGQEI-/5/1769870705561?e=1770604191&amp;v=beta&amp;t=kRnhloV73nq4-ltbu6CG6Xd-UtYylY6Ya9wpbZOxHf0"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-360p-quality-analysis/B4DZwUg43pGQEI-/6/1769870705561?e=1770604191&amp;v=beta&amp;t=EUdv_YP87a0KG_l8H6aV7jaJMPsWQLiBYZl_fWoHjDY"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-360p-quality-analysis/B4DZwUg43pGQEI-/7/1769870705561?e=1770604191&amp;v=beta&amp;t=2OdIE-PD-oR3QFXtYBF8vaH-uHMFWbJ3B3mjJ2weTpw"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-360p-quality-analysis/B4DZwUg43pGQEI-/8/1769870705561?e=1770604191&amp;v=beta&amp;t=TRLv0A-oGrcByy-KTa29SF_yWiVGG-dmrugsh2_4ZEU"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-360p-quality-analysis/B4DZwUg43pGQEI-/9/1769870705561?e=1770604191&amp;v=beta&amp;t=NMNea-DYlB78JhYcrWm95QXsLKBPZd1sXk6GHGpLKVo"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-360p-quality-analysis/B4DZwUg43pGQEI-/10/1769870705561?e=1770604191&amp;v=beta&amp;t=1v8tcnfCpIeicuHDhT3leZ47BZxIc9RrKRl3yWO2Ue8"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-360p-quality-analysis/B4DZwUg43pGQEI-/11/1769870705561?e=1770604191&amp;v=beta&amp;t=f6s3MnKIXr1QjoWs4rg1_93Esw_gMKC9pSSXOETQyRg"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-360p-quality-analysis/B4DZwUg43pGQEI-/12/1769870705561?e=1770604191&amp;v=beta&amp;t=_wD518qU3fLwYDNzWvGguxrS7cQCvGYwvMNTltDFQKg"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-360p-quality-analysis/B4DZwUg43pGQEI-/13/1769870705561?e=1770604191&amp;v=beta&amp;t=TJQtP-2qTxLGX6lYUUJcnVPjtTj5UBp6SJWaSvlGMQI"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-360p-quality-analysis/B4DZwUg43pGQEI-/14/1769870705561?e=1770604191&amp;v=beta&amp;t=PRggesOcBqdRx4CBT252hXWWUSO46NswjqiNtRhWmEU"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-360p-quality-analysis/B4DZwUg43pGQEI-/15/1769870705561?e=1770604191&amp;v=beta&amp;t=682H69VESrVLnpw2xEjJiP7OzpKKQre8QpUS67glkOo"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-360p-quality-analysis/B4DZwUg43pGQEI-/16/1769870705561?e=1770604191&amp;v=beta&amp;t=Y3yKiP-JX_ibCRhXKUsBh0nZqTGTHBl6avW5tRaaTjE"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-360p-quality-analysis/B4DZwUg43pGQEI-/17/1769870705561?e=1770604191&amp;v=beta&amp;t=JtFFILs6Ggtogzx9gXL0n_u0zI9CXsQTUfqwdMAmVq4"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-360p-quality-analysis/B4DZwUg43pGQEI-/18/1769870705561?e=1770604191&amp;v=beta&amp;t=Wo3_YEV93pJ7t-51Qxy2THMSC_d5GlaWI0G5eMyXOPs"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-360p-quality-analysis/B4DZwUg43pGQEI-/19/1769870705561?e=1770604191&amp;v=beta&amp;t=jzXCVjIBf_IOcBfSeVUwWI9oU97yyLZSdJK9WpIWE-s"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-360p-quality-analysis/B4DZwUg43pGQEI-/20/1769870705561?e=1770604191&amp;v=beta&amp;t=lwG1-Je5mP4CPhT_U0gnHzShPJ59FXqphs1OfN5XZRI"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-360p-quality-analysis/B4DZwUg43pGQEI-/21/1769870705561?e=1770604191&amp;v=beta&amp;t=IPBtlMFsq0iqSmT-jdvuSSoBCeoC6xlulz456l0HkYE"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-360p-quality-analysis/B4DZwUg43pGQEI-/22/1769870705561?e=1770604191&amp;v=beta&amp;t=nGwH6KrVQs2U2IMUU6YRSvZWy-zro4S5SsZC61ABM8o"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-360p-quality-analysis/B4DZwUg43pGQEI-/23/1769870705561?e=1770604191&amp;v=beta&amp;t=2kom_LgASTGuBywjGgyE457cnnjr3F78JoxmFjZjy7A"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-360p-quality-analysis/B4DZwUg43pGQEI-/24/1769870705561?e=1770604191&amp;v=beta&amp;t=2c0dH0VR9jvcw4WhiS3b69zuNka1R3z4QBHIR2vd2Ac"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-360p-quality-analysis/B4DZwUg43pGQEI-/25/1769870705561?e=1770604191&amp;v=beta&amp;t=4mZEin4wfJGv1pBn0ZHmASYEUSDxhJ7Yl8PcwmedAec"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-360p-quality-analysis/B4DZwUg43pGQEI-/26/1769870705561?e=1770604191&amp;v=beta&amp;t=fYnegOC0kFpQjrC4I9kVu8gZS_Tv_MLG4jOXhIYmc7g"/>
+        </SegmentList>
+      </Representation>
+    </AdaptationSet>
+    <AdaptationSet contentType="video" segmentAlignment="true" codecs="av01.0.04M.10,mp4a.40.2">
+      <Representation id="B4DZwUg43pGQEQ-" bandwidth="624591" width="720" height="1280" codecs="av01.0.04M.10,mp4a.40.2" sar="9:16" frameRate="30/1" mimeType="video/iso.segment" qualityRanking="0">
+        <SegmentList duration="4">
+          <Initialization sourceURL="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-av1-720p-quality-analysis/B4DZwUg43pGQEQ-/1/1769870711913?e=1770604191&amp;v=beta&amp;t=iUafNHmdyB105-9Le09LD3G0I-vI_LkLQE4N0AMY2kg"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-av1-720p-quality-analysis/B4DZwUg43pGQEQ-/2/1769870711913?e=1770604191&amp;v=beta&amp;t=6aJWyOChw0XLpd0SoBjsQwbbm4D7OWvA1ex4uQPXeiU"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-av1-720p-quality-analysis/B4DZwUg43pGQEQ-/3/1769870711913?e=1770604191&amp;v=beta&amp;t=rLsCHQClltcU7qGpKRt-xLF6azB__iuJdX0-1EsU8N0"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-av1-720p-quality-analysis/B4DZwUg43pGQEQ-/4/1769870711913?e=1770604191&amp;v=beta&amp;t=gtfv0lW9IUK4scKE_A4zO_yAdeyvYkXgug9NSXtjZU4"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-av1-720p-quality-analysis/B4DZwUg43pGQEQ-/5/1769870711913?e=1770604191&amp;v=beta&amp;t=7SdfKgJUy6rJU5j-gxKg2Lr-oQtvG5WvTxGOhN83u-Q"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-av1-720p-quality-analysis/B4DZwUg43pGQEQ-/6/1769870711913?e=1770604191&amp;v=beta&amp;t=T_JhakPnfkXRkEazWxxoABnEVlovwpiAz1HYpO_28tI"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-av1-720p-quality-analysis/B4DZwUg43pGQEQ-/7/1769870711913?e=1770604191&amp;v=beta&amp;t=yy2-8ZMGGibNdR8UQBxg_5tl7TU4u3t5PdM4LpytYgc"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-av1-720p-quality-analysis/B4DZwUg43pGQEQ-/8/1769870711913?e=1770604191&amp;v=beta&amp;t=xXWaeyfXEIfs9qZ3jeGQk0fxDd9844Gi-N1ZEMGHxF4"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-av1-720p-quality-analysis/B4DZwUg43pGQEQ-/9/1769870711913?e=1770604191&amp;v=beta&amp;t=_j68o5G0Wefb-QMWvwL2JTTUIbyyuQOpLhxPbee5qpc"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-av1-720p-quality-analysis/B4DZwUg43pGQEQ-/10/1769870711913?e=1770604191&amp;v=beta&amp;t=UH1B2BDkMvbfpA15VNZZOoEboUo3Um7V2OSZNUuA4nM"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-av1-720p-quality-analysis/B4DZwUg43pGQEQ-/11/1769870711913?e=1770604191&amp;v=beta&amp;t=IrKwVG7zstVqYxIerCU7aGfKb20dmSYOrR96fKS6WHk"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-av1-720p-quality-analysis/B4DZwUg43pGQEQ-/12/1769870711913?e=1770604191&amp;v=beta&amp;t=HTy7yKq48pW9KhuC9Y8GURtGPWZQ7t_Yt0i7swJs3Lg"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-av1-720p-quality-analysis/B4DZwUg43pGQEQ-/13/1769870711913?e=1770604191&amp;v=beta&amp;t=mxlZmU8zhzwoWcYOHWwgR763-53u6N5uHU5w1VpKQo4"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-av1-720p-quality-analysis/B4DZwUg43pGQEQ-/14/1769870711913?e=1770604191&amp;v=beta&amp;t=5UZtasJtkA_eJ2T6O-TO_fo85LmR_kfW0v7UPEkSZpk"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-av1-720p-quality-analysis/B4DZwUg43pGQEQ-/15/1769870711913?e=1770604191&amp;v=beta&amp;t=n4DXDdU_qSHLaQZPfnMZONTlwuKM8MEHUFdB28oVqBE"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-av1-720p-quality-analysis/B4DZwUg43pGQEQ-/16/1769870711913?e=1770604191&amp;v=beta&amp;t=5cyNy98ZBk_snNMSY4dr5SvDaCa1PId6QtW9Y_pENFE"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-av1-720p-quality-analysis/B4DZwUg43pGQEQ-/17/1769870711913?e=1770604191&amp;v=beta&amp;t=Z5XIWKQ7kgjuZcHTjIUEz3o6HhQeXwTiYBGKNATzSLA"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-av1-720p-quality-analysis/B4DZwUg43pGQEQ-/18/1769870711913?e=1770604191&amp;v=beta&amp;t=DLV97UWbsRmvLSl5XXVBrHHfyIpc_h7m-68WFg9NE38"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-av1-720p-quality-analysis/B4DZwUg43pGQEQ-/19/1769870711913?e=1770604191&amp;v=beta&amp;t=5n3JHxGCZ4rWuAYCQTVbsnXjiCaLSN3h4Cpq9-jodm0"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-av1-720p-quality-analysis/B4DZwUg43pGQEQ-/20/1769870711913?e=1770604191&amp;v=beta&amp;t=rqeh-CYABNGTsT8NOFKkWAku_aLnhBdXQseiI4sbtq8"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-av1-720p-quality-analysis/B4DZwUg43pGQEQ-/21/1769870711913?e=1770604191&amp;v=beta&amp;t=JjJGjU_b9rLBBTqPeRGdadiE2OBdsUIt6qLPxNZJ0N0"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-av1-720p-quality-analysis/B4DZwUg43pGQEQ-/22/1769870711913?e=1770604191&amp;v=beta&amp;t=S9uBRoYk5n9-5GCHCP3Y9tlOcFqW9qrgoR-PiNEHM-4"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-av1-720p-quality-analysis/B4DZwUg43pGQEQ-/23/1769870711913?e=1770604191&amp;v=beta&amp;t=UDkkyxiGQ2zQwwQKVCmmJncy22rQjCfMeliM-IQJPuQ"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-av1-720p-quality-analysis/B4DZwUg43pGQEQ-/24/1769870711913?e=1770604191&amp;v=beta&amp;t=ViJocGyQZBSRKDXdGDN9cJ_tAxg2AblvQyNfe3fIhHE"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-av1-720p-quality-analysis/B4DZwUg43pGQEQ-/25/1769870711913?e=1770604191&amp;v=beta&amp;t=pa4nir5n1KyH1TI6aS1SralHugckCA9yt6_4ZAVy-Qg"/>
+          <SegmentURL media="https://dms.licdn.com/playlist/vid/v2/D4D05AQHseag-Nt6h5g/hls-av1-720p-quality-analysis/B4DZwUg43pGQEQ-/26/1769870711913?e=1770604191&amp;v=beta&amp;t=Dr4cU8Auc2szymvQqNVRrd92Ox9faMSehKVSMzjf8mA"/>
+        </SegmentList>
+      </Representation>
+    </AdaptationSet>
+  </Period>
+</MPD>

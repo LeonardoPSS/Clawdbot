@@ -107,3 +107,12 @@ class TelegramNotifier:
             f"🔗 [Abrir Link Externo]({job_data.get('link')})"
         )
         self.send_message(message)
+
+    def notify_moltbook_news(self, summary: str):
+        """Notification for Moltbook news summaries."""
+        message = (
+            f"🦞 *Clawdbot Moltbook Update*\n\n"
+            f"{summary}\n\n"
+            f"🔍 Explore mais em: [moltbook.com](https://www.moltbook.com)"
+        )
+        self.send_message(message)

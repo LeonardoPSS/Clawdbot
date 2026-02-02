@@ -94,6 +94,7 @@ notifications:
   telegram:
     enabled: true
 
+
 linkedin_automation:
   daily_posts:
     enabled: true
@@ -118,4 +119,22 @@ linkedin_automation:
   image_generation:
     enabled: true
     style: "professional, modern, minimalist, tech-themed"
+
+moltbook_automation:
+  daily_posts:
+    enabled: true
+    time: "09:30"
+    times:
+      - "09:30"
+      - "14:00"
+      - "18:30"
+      - "22:00"
+    topics:
+      - "Agentes Autônomos"
+      - "Sincronização Neural"
+      - "Automação Local"
+      - "Nexus Ecosystem"
+  engagement:
+    comments_per_day: 5
+    likes_per_day: 10
 

@@ -1,13 +1,9 @@
 import logging
 import datetime
-import datetime
 import os
-import datetime
-import datetime
 import sys
 import time
 import random
-import datetime
 from src.config import load_config
 from src.resume_parser import ResumeParser
 from src.job_searcher import JobSearcher
@@ -25,7 +21,6 @@ logging.basicConfig(
 )
 logger = logging.getLogger("AntigravityMaster")
 
-import datetime
 def main():
     logger.info("Starting Antigravity Job Bot 🚀")
     
@@ -53,43 +48,6 @@ def main():
         auth = Authenticator(searcher.page, config)
         logged_in_li = auth.login_linkedin()
         
-        # 4.2 LinkedIn Evolution Suite (Networking & Content)
-        if config.behavior.evolution.enabled:
-            logger.info("Initializing LinkedIn Evolution Suite... 👔✨")
-            li_manager = LinkedInManager(searcher.page, config)
-            
-            # Import Content Generator for varied posts
-            from src.content_generator import ContentGenerator
-            content_gen = ContentGenerator(config)
-            
-            # Post Generation with varied topics
-            post_content = content_gen.generate_varied_post(resume_data['raw_text'])
-            if post_content:
-                image_path = None
-                if config.linkedin_automation.image_generation.enabled:
-                    logger.info("🎨 Generating image for post...")
-                    image_path = content_gen.generate_and_save_image(post_content)
-                
-                logger.info(f"AI suggested post (Topic: {content_gen.get_daily_topic()}): {post_content[:50]}...")
-                if li_manager.create_post(post_content, image_path=image_path):
-                    logger.info("✅ Post created successfully in this session.")
-                else:
-                    logger.warning("❌ Failed to create LinkedIn post.")
-            else:
-                logger.info("AI did not suggest a post content at this time.")
-
-            
-            # Engagement (Like some posts)
-            li_manager.engage_with_feed(limit=3)
-            li_manager.search_and_engage(config.behavior.evolution.engagement_keywords, limit_per_keyword=2)
-            
-            # Follow-up Messaging (Check for accepted connections)
-            li_manager.check_connections_and_message()
-            
-            # Profile Audit (Once per run, output to logs)
-            audit_tips = li_manager.perform_profile_audit()
-            logger.info("--- Profile Audit Tips ---")
-            logger.info(audit_tips)
 
         # Pass the browser page to applicant
         applicant = Applicant(searcher.page, config, storage)

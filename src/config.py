@@ -77,6 +77,22 @@ class Secrets(BaseModel):
     linkedin: Dict[str, str] = Field(default_factory=dict)
     telegram: Dict[str, str] = Field(default_factory=dict)
     openai: Dict[str, str] = Field(default_factory=dict)
+    brave: Dict[str, str] = Field(default_factory=dict)
+    moltbook: Dict[str, str] = Field(default_factory=dict)
+
+class MoltbookDailyPostsConfig(BaseModel):
+    enabled: bool = True
+    time: Optional[str] = "09:00"
+    times: List[str] = Field(default_factory=list)
+    topics: List[str] = Field(default_factory=list)
+
+class MoltbookEngagementConfig(BaseModel):
+    comments_per_day: int = 5
+    likes_per_day: int = 15
+
+class MoltbookAutomationConfig(BaseModel):
+    daily_posts: MoltbookDailyPostsConfig
+    engagement: MoltbookEngagementConfig
 
 class LinkedInDailyPostsConfig(BaseModel):
     enabled: bool = True
@@ -89,14 +105,14 @@ class LinkedInEngagementConfig(BaseModel):
     follows_per_day: int = 10
     target_profiles: List[str] = Field(default_factory=list)
 
-class LinkedInImageGenConfig(BaseModel):
+class ImageGenerationConfig(BaseModel):
     enabled: bool = True
-    style: str = "professional, modern, tech-themed"
+    style: str = "professional"
 
 class LinkedInAutomationConfig(BaseModel):
     daily_posts: LinkedInDailyPostsConfig
     engagement: LinkedInEngagementConfig
-    image_generation: LinkedInImageGenConfig
+    image_generation: ImageGenerationConfig
 
 class Settings(BaseModel):
     bot: BotConfig
@@ -108,6 +124,7 @@ class Settings(BaseModel):
     logging: LoggingConfig
     notifications: NotificationsConfig
     linkedin_automation: Optional[LinkedInAutomationConfig] = None
+    moltbook_automation: Optional[MoltbookAutomationConfig] = None
     secrets: Optional[Secrets] = None
 
 
@@ -127,11 +144,32 @@ def load_config(config_path: str = "config/settings.yaml", secrets_path: str = "
         
         # Load secrets if the file exists
         secrets_file = Path(secrets_path)
+        secrets_data = {}
         if secrets_file.exists():
             with open(secrets_file, 'r', encoding='utf-8') as sf:
-                secrets_data = yaml.safe_load(sf)
-                if secrets_data:
-                    data['secrets'] = secrets_data
+                secrets_data = yaml.safe_load(sf) or {}
+        
+        # Override with environment variables for Cloud Deployment
+        import os
+        env_secrets = {
+            "openai": {"api_key": os.environ.get("OPENAI_API_KEY")},
+            "brave": {"api_key": os.environ.get("BRAVE_API_KEY")},
+            "moltbook": {"api_key": os.environ.get("MOLTBOOK_API_KEY")},
+            "telegram": {
+                "token": os.environ.get("TELEGRAM_TOKEN"),
+                "chat_id": os.environ.get("TELEGRAM_CHAT_ID")
+            }
+        }
+        
+        # Merge dictionaries
+        for provider, values in env_secrets.items():
+            if provider not in secrets_data:
+                secrets_data[provider] = {}
+            for k, v in values.items():
+                if v: # Only override if env var is set
+                    secrets_data[provider][k] = v
+
+        data['secrets'] = secrets_data
 
         settings = Settings(**data)
         logger.info("Configuration loaded and validated successfully.")

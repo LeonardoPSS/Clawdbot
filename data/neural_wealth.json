@@ -1,0 +1,60 @@
+{
+    "balance": 400.0,
+    "total_roi": 0.0,
+    "active_positions": [
+        {
+            "title": "Overcoming Top Pain Points for Small Business Owners with Gravity",
+            "entry_price": 100.0,
+            "current_value": 100.0,
+            "roi": 0.0,
+            "entry_time": "2026-02-01T22:12:48.904410",
+            "sentiment": "Bullish",
+            "score": 50
+        },
+        {
+            "title": "The 12 Best AI Agents in 2026: Tested & Reviewed | Lindy",
+            "entry_price": 100.0,
+            "current_value": 100.0,
+            "roi": 0.0,
+            "entry_time": "2026-02-01T22:12:48.904410",
+            "sentiment": "Bullish",
+            "score": 50
+        },
+        {
+            "title": "Top 100 Best AI Projects on GitHub | 2026 | AIxploria",
+            "entry_price": 100.0,
+            "current_value": 100.0,
+            "roi": 0.0,
+            "entry_time": "2026-02-01T22:12:48.904410",
+            "sentiment": "Bullish",
+            "score": 50
+        },
+        {
+            "title": "Top Trending GitHub Projects This Week Part-1 : Open Source AI, Automation & Dev Tools - YouTube",
+            "entry_price": 100.0,
+            "current_value": 100.0,
+            "roi": 0.0,
+            "entry_time": "2026-02-01T22:12:48.904410",
+            "sentiment": "Bullish",
+            "score": 50
+        },
+        {
+            "title": "Top Trending GitHub Projects This Week Part-2 : Open Source AI, Dev Tools & Automation - YouTube",
+            "entry_price": 100.0,
+            "current_value": 100.0,
+            "roi": 0.0,
+            "entry_time": "2026-02-01T22:12:48.904410",
+            "sentiment": "Bullish",
+            "score": 50
+        },
+        {
+            "title": "Top Trending GitHub Projects This Week: Open Source AI, Dev Tools & Automation #218 - YouTube",
+            "entry_price": 100.0,
+            "current_value": 100.0,
+            "roi": 0.0,
+            "entry_time": "2026-02-01T22:12:48.904410",
+            "sentiment": "Bullish",
+            "score": 50
+        }
+    ]
+}

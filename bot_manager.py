@@ -5,6 +5,7 @@ Run this to start the LinkedIn bot
 import subprocess
 import sys
 import os
+import time
 
 def start_bot():
     bot_dir = r"C:\Users\leona\Downloads\AntigravityJobBot"
