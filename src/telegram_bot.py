@@ -23,11 +23,13 @@ logger = logging.getLogger(__name__)
 class TelegramBot:
     def __init__(self, config: Settings, job_searcher=None, desktop_agent=None):
         self.config = config
-        self.voice = VoiceEngine(config)
-        self.memory = MemoryEngine(config) # Eternal Memory
-        self.room = RoomController(config) # IoT Control
-        self.growth = GrowthEngine(config) # Singularity
-        self.vision = VisionLearner(config) # The Beholder
+        # Sub-systems (Lazy/Safe Load)
+        self.voice = self._safe_init(lambda: VoiceEngine(config), "VoiceEngine")
+        self.memory = self._safe_init(lambda: MemoryEngine(config), "MemoryEngine")
+        self.room = self._safe_init(lambda: RoomController(config), "RoomController")
+        self.growth = self._safe_init(lambda: GrowthEngine(config), "GrowthEngine")
+        self.vision = self._safe_init(lambda: VisionLearner(config), "VisionLearner")
+        self.neo_trade = self._safe_init(lambda: NeoTradeBot(), "NeoTradeBot")
         self.job_searcher = job_searcher
         self.token = ""
         self.allowed_chat_id = ""
@@ -49,12 +51,18 @@ class TelegramBot:
 
         self.ai = AIAssistant(config)
         self.desktop_agent = desktop_agent or DesktopAgent(config)
-        self.entrepreneur = EntrepreneurAgent(config)
-        self.neo_trade = NeoTradeBot()
+        self.entrepreneur = self._safe_init(lambda: EntrepreneurAgent(config), "EntrepreneurAgent")
         self.running = False
         self.last_update_id = 0
         self.thread = None
         self.chat_history = [] # Memory buffer
+
+    def _safe_init(self, factory_func, name):
+        try:
+            return factory_func()
+        except Exception as e:
+            logger.error(f"Failed to initialize {name}: {e}")
+            return None
 
     def start(self):
         """Starts the Telegram polling loop in a background thread."""
@@ -154,11 +162,13 @@ class TelegramBot:
                 f.write(audio_data)
                 
             # 3. Transcribe
-            transcript = self.voice.speech_to_text(temp_path)
-            self.send_message(chat_id, f"📝 Transcrição: _{transcript}_", parse_mode="Markdown")
-            
-            # 4. Reply (Chat)
-            self._handle_chat(chat_id, transcript)
+            if self.voice:
+                transcript = self.voice.speech_to_text(temp_path)
+                self.send_message(chat_id, f"📝 Transcrição: _{transcript}_", parse_mode="Markdown")
+                # 4. Reply (Chat)
+                self._handle_chat(chat_id, transcript)
+            else:
+                self.send_message(chat_id, "⚠️ Módulo de Voz indisponível.")
             
         except Exception as e:
             logger.error(f"Voice Error: {e}")
@@ -182,13 +192,17 @@ class TelegramBot:
             if not msg:
                 response = "⚠️ Uso: `/speak <texto>`"
             else:
-                self.send_message(chat_id, "🗣️ Gerando áudio...")
-                mp3_path = self.voice.text_to_speech(msg)
-                if mp3_path:
-                    self._send_voice(chat_id, mp3_path)
-                    response = None 
+
+                if self.voice:
+                    self.send_message(chat_id, "🗣️ Gerando áudio...")
+                    mp3_path = self.voice.text_to_speech(msg)
+                    if mp3_path:
+                        self._send_voice(chat_id, mp3_path)
+                        response = None 
+                    else:
+                        response = "❌ Erro ao gerar voz."
                 else:
-                    response = "❌ Erro ao gerar voz."
+                    response = "⚠️ Módulo de Voz indisponível."
         elif command == "/antigravity":
             if self.job_searcher:
                 self.send_message(chat_id, "🌌 Introducing Zero-G protocols... Hold on!")
@@ -201,8 +215,12 @@ class TelegramBot:
             if len(text.split()) < 2:
                 response = "⚠️ Uso: `/room focus`, `/room party`, `/room chill`"
             else:
+
                 scene = text.split()[1]
-                response = self.room.set_scene(scene)
+                if self.room:
+                    response = self.room.set_scene(scene)
+                else:
+                    response = "⚠️ Módulo de Controle de Sala indisponível."
 
         elif command == "/spotify":
             parts = text.split()
@@ -213,24 +231,31 @@ class TelegramBot:
                 query = " ".join(parts[2:]) if len(parts) > 2 else ""
                 
                 if action == "play":
-                    response = self.room.play_music(query)
+                    response = self.room.play_music(query) if self.room else "⚠️ Módulo Spotify indisponível."
                 elif action == "pause":
-                    response = self.room.pause_music()
+                    response = self.room.pause_music() if self.room else "⚠️ Módulo Spotify indisponível."
                 elif action == "next":
-                    response = self.room.next_track()
+                    response = self.room.next_track() if self.room else "⚠️ Módulo Spotify indisponível."
                 else:
                     response = "⚠️ Ação desconhecida."
         
         elif command == "/evolve":
             if len(text.split()) < 2:
+
                 self.send_message(chat_id, "🧬 Analisando meu próprio código (Self-Audit)...")
-                audit = self.growth.audit_self()
-                response = f"🧠 **Plano de Evolução:**\n{audit}"
+                if self.growth:
+                    audit = self.growth.audit_self()
+                    response = f"🧠 **Plano de Evolução:**\n{audit}"
+                else:
+                    response = "⚠️ Módulo de Evolução indisponível."
             else:
                 instruction = text.replace("/evolve", "", 1).strip()
                 self.send_message(chat_id, f"🧬 Mutando código para aprender: '{instruction}'...")
-                res = self.growth.generate_skill(instruction)
-                response = res
+                if self.growth:
+                    res = self.growth.generate_skill(instruction)
+                    response = res
+                else:
+                    response = "⚠️ Módulo de Evolução indisponível."
         
 
         elif command == "/pc":
@@ -264,11 +289,15 @@ class TelegramBot:
 
         elif command == "/idea":
             topic = text.replace("/idea", "", 1).strip()
+
             self.send_message(chat_id, f"💡 Brainstorming sobre '{topic or 'Geral'}', aguarde...")
-            response = self.entrepreneur.brainstorm_idea(topic)
+            if self.entrepreneur:
+                response = self.entrepreneur.brainstorm_idea(topic)
+            else:
+                response = "⚠️ Módulo Empreendedor indisponível."
             
         elif command == "/projects":
-            response = self.entrepreneur.list_ideas()
+            response = self.entrepreneur.list_ideas() if self.entrepreneur else "⚠️ Módulo Empreendedor indisponível."
             
 
         elif command == "/learn":
@@ -342,7 +371,10 @@ class TelegramBot:
                     response = "⚠️ Uso: `/boost_linkedin post` | `/boost_linkedin network` | `/boost_linkedin audit`"
 
         elif command == "/wealth":
-            wealth = self.neo_trade.wealth
+            if not self.neo_trade:
+                response = "⚠️ Módulo de Trading indisponível."
+            else:
+                wealth = self.neo_trade.wealth
             balance = wealth.get("balance", 0)
             active = len(wealth.get("active_positions", []))
             
@@ -359,6 +391,10 @@ class TelegramBot:
                     response += f"\n• {pos['title'][:30]}... ({pos['roi']:.2f}%)"
 
         elif command == "/trade":
+            if not self.neo_trade:
+                self.send_message(chat_id, "⚠️ Módulo de Trading indisponível.")
+                return 
+
             self.send_message(chat_id, "📡 **Analisando tendências de mercado e volumes neurais...**")
             # Executa o ciclo de trade
             self.neo_trade.run_cycle()
@@ -388,8 +424,11 @@ class TelegramBot:
                         "que tenha alto potencial de viralização no TikTok/Reels. "
                         "Inclua sugestão de título e hashtags."
                     )
-                    res = self.vision.process_video(url, custom_prompt=prompt)
-                    self.send_message(chat_id, res)
+                    if self.vision:
+                        res = self.vision.process_video(url, custom_prompt=prompt)
+                        self.send_message(chat_id, res)
+                    else:
+                        self.send_message(chat_id, "⚠️ Módulo de Visão indisponível.")
                 
                 threading.Thread(target=watch_task).start()
                 return # Async response
@@ -452,10 +491,11 @@ class TelegramBot:
             self.chat_history = self.chat_history[-20:]
 
         # RECALL MEMORY (RAG)
-        memory_context = self.memory.recall_relevant(text)
-        if memory_context:
-            logger.info(f"🧠 Recalled memory: {memory_context[:50]}...")
-            system_prompt += f"\n\n[RECALLED MEMORIES]\n{memory_context}"
+        if self.memory:
+            memory_context = self.memory.recall_relevant(text)
+            if memory_context:
+                logger.info(f"🧠 Recalled memory: {memory_context[:50]}...")
+                system_prompt += f"\n\n[RECALLED MEMORIES]\n{memory_context}"
 
         # ENABLE PERSONA
         # ai_response = self.ai.ask_gpt(system_prompt, text, incorporate_persona=True)
@@ -465,8 +505,9 @@ class TelegramBot:
             ai_response = "Desculpe, estou reorganizando meus pensamentos. Pode repetir?"
         
         # Store interactions in Eternal Memory
-        self.memory.store_interaction("user", text)
-        self.memory.store_interaction("assistant", ai_response)
+        if self.memory:
+            self.memory.store_interaction("user", text)
+            self.memory.store_interaction("assistant", ai_response)
 
         # Update history with assistant response
         self.chat_history.append({"role": "assistant", "content": ai_response})

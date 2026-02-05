@@ -65,10 +65,14 @@ def main():
     storage = Storage(config.logging.save_path + "/applied.csv")
 
     # 3. Initialize Telegram Bot Early (for connectivity during setup)
-    telegram_bot = TelegramBot(config)
-    if config.notifications.telegram.enabled:
-        telegram_bot.start()
-        logger.info("🤖 Telegram Bot connection established.")
+    try:
+        telegram_bot = TelegramBot(config)
+        if config.notifications.telegram.enabled:
+            telegram_bot.start()
+            logger.info("🤖 Telegram Bot connection established.")
+    except Exception as e:
+        logger.error(f"❌ Failed to initialize Telegram Bot: {e}")
+        telegram_bot = None
 
     # 4. Parse Resume
     parser = ResumeParser(config.resume.file_path)
