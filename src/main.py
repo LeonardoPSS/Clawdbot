@@ -30,6 +30,8 @@ logger = logging.getLogger("AntigravityMaster")
 
 # Global error state for diagnostics
 LATENT_ERROR = None
+# Global bot instance for diagnostics
+telegram_bot = None
 
 # --- Cloud Health Check Server ---
 app = Flask(__name__)
@@ -45,14 +47,21 @@ def status_check():
     token = os.getenv("TELEGRAM_BOT_TOKEN")
     has_token = bool(token)
     
-    # Check if TelegramBot was initialized in memory
-    bot_active = False
+    # Check actual bot state
+    global telegram_bot, LATENT_ERROR
+    bot_alive = False
+    bot_token_loaded = False
     
-    global LATENT_ERROR
+    if telegram_bot:
+        bot_alive = getattr(telegram_bot, 'running', False)
+        bot_token_loaded = bool(getattr(telegram_bot, 'token', None))
+
     status = {
         "app": "Nexara Bot",
-        "version": "1.2.2 (Safe Mode)",
+        "version": "1.3.0 (Global State)",
         "telegram_token_env": "PRESENT" if has_token else "MISSING",
+        "telegram_token_loaded": "YES" if bot_token_loaded else "NO",
+        "bot_active": bot_alive,
         "host": os.getenv("HOSTNAME", "unknown"),
         "last_error": LATENT_ERROR or "None"
     }
@@ -73,9 +82,9 @@ def main():
 
     logger.info("Starting Antigravity Job Bot 🚀")
     
-    desktop_agent = None
-    telegram_bot = None
     searcher = None
+    
+    global telegram_bot
 
     # 1. Load Config
     try:
