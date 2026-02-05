@@ -28,6 +28,9 @@ logging.basicConfig(
 )
 logger = logging.getLogger("AntigravityMaster")
 
+# Global error state for diagnostics
+LATENT_ERROR = None
+
 # --- Cloud Health Check Server ---
 app = Flask(__name__)
 
@@ -45,11 +48,13 @@ def status_check():
     # Check if TelegramBot was initialized in memory
     bot_active = False
     
+    global LATENT_ERROR
     status = {
         "app": "Nexara Bot",
-        "version": "1.2.1 (Diagnostics)",
+        "version": "1.2.2 (Safe Mode)",
         "telegram_token_env": "PRESENT" if has_token else "MISSING",
-        "host": os.getenv("HOSTNAME", "unknown")
+        "host": os.getenv("HOSTNAME", "unknown"),
+        "last_error": LATENT_ERROR or "None"
     }
     return json.dumps(status, indent=4)
 
@@ -102,7 +107,7 @@ def main():
 
     searcher = JobSearcher(config)
     
-    searcher = JobSearcher(config)
+
     
     # Check if any job platform is enabled
     platforms_enabled = (
@@ -290,7 +295,15 @@ def main():
     except KeyboardInterrupt:
         logger.info("Bot stopped by user.")
     except Exception as e:
-        logger.error(f"Bot runtime error: {e}")
+        global LATENT_ERROR
+        LATENT_ERROR = str(e)
+        logger.critical(f"❌ BOT CRASHED: {e}")
+        logger.info("⚠️ Entering SAFE MODE (Loop) to keep Diagnostics Server alive...")
+        try:
+            while True:
+                time.sleep(60)
+        except: pass
+
     finally:
         if not config.bot.headless:
             logger.info("Bot finished job search tasks.")
