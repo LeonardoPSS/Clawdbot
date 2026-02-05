@@ -22,7 +22,7 @@ wheels/
 *.egg
 
 # Secrets
-config/secrets.yaml
+
 .env
 *.pem
 *.key
