@@ -35,6 +35,24 @@ app = Flask(__name__)
 def health_check():
     return "Nexara Bot is Running! 🚀", 200
 
+@app.route("/status")
+def status_check():
+    import os
+    import json
+    token = os.getenv("TELEGRAM_BOT_TOKEN")
+    has_token = bool(token)
+    
+    # Check if TelegramBot was initialized in memory
+    bot_active = False
+    
+    status = {
+        "app": "Nexara Bot",
+        "version": "1.2.1 (Diagnostics)",
+        "telegram_token_env": "PRESENT" if has_token else "MISSING",
+        "host": os.getenv("HOSTNAME", "unknown")
+    }
+    return json.dumps(status, indent=4)
+
 def run_web_server():
     port = int(os.environ.get("PORT", 8080))
     logger.info(f"🌍 Starting Health Check Server on port {port}")
@@ -68,6 +86,9 @@ def main():
     try:
         telegram_bot = TelegramBot(config)
         if config.notifications.telegram.enabled:
+            if not telegram_bot.token:
+                 logger.critical("\n" + "="*50 + "\n❌ CRITICAL: TELEGRAM TOKEN MISSING!\nConfigure 'TELEGRAM_BOT_TOKEN' in Cloud Env Vars.\n" + "="*50 + "\n")
+            
             telegram_bot.start()
             logger.info("🤖 Telegram Bot connection established.")
     except Exception as e:
