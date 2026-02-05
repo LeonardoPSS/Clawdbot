@@ -1,0 +1,23 @@
+﻿[*] Testando conexao com o Telegram Bot API...
+
+[OK] Token encontrado: 8381269693...
+[OK] Chat ID encontrado: 1641025073
+
+[*] Testando getMe...
+[OK] Bot conectado com sucesso!
+   Nome: Omega Imperial Command
+   Username: @OmegaImperialCmdBot
+   ID: 8381269693
+
+[*] Testando getUpdates (ultimas mensagens)...
+[OK] 3 atualizacoes encontradas
+   Ultima mensagem: 'Oi'
+   Chat ID: 1641025073
+
+[*] Enviando mensagem de teste...
+[OK] Mensagem enviada com sucesso!
+   Message ID: 1784
+
+==================================================
+[OK] TODOS OS TESTES PASSARAM!
+==================================================

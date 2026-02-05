@@ -1,0 +1,15 @@
+﻿python-telegram-bot
+openai
+pyyaml
+python-dotenv
+requests
+playwright
+pillow
+gTTS
+chromadb
+spotipy
+pydub
+yt-dlp
+opencv-python-headless
+ffmpeg-python
+paramiko

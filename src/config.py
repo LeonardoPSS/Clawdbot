@@ -1,8 +1,13 @@
+import os
 import yaml
 import logging
 from pathlib import Path
 from typing import List, Optional, Dict, Literal, Union
 from pydantic import BaseModel, Field, ValidationError
+from dotenv import load_dotenv
+
+# Load environment variables from .env file, forcing override of existing ones
+load_dotenv(override=True)
 
 # Logging setup (temporary until full logging module is ready)
 logging.basicConfig(level=logging.INFO)
@@ -79,6 +84,7 @@ class Secrets(BaseModel):
     openai: Dict[str, str] = Field(default_factory=dict)
     brave: Dict[str, str] = Field(default_factory=dict)
     moltbook: Dict[str, str] = Field(default_factory=dict)
+    spotify: Dict[str, str] = Field(default_factory=dict)
 
 class MoltbookDailyPostsConfig(BaseModel):
     enabled: bool = True
@@ -149,20 +155,24 @@ def load_config(config_path: str = "config/settings.yaml", secrets_path: str = "
             with open(secrets_file, 'r', encoding='utf-8') as sf:
                 secrets_data = yaml.safe_load(sf) or {}
         
-        # Override with environment variables for Cloud Deployment
+        # Merge with environment variables for security
         import os
-        env_secrets = {
-            "openai": {"api_key": os.environ.get("OPENAI_API_KEY")},
-            "brave": {"api_key": os.environ.get("BRAVE_API_KEY")},
-            "moltbook": {"api_key": os.environ.get("MOLTBOOK_API_KEY")},
+        env_mapping = {
+            "openai": {"api_key": os.getenv("OPENAI_API_KEY")},
+            "brave": {"api_key": os.getenv("BRAVE_API_KEY")},
+            "moltbook": {"api_key": os.getenv("MOLTBOOK_API_KEY")},
             "telegram": {
-                "token": os.environ.get("TELEGRAM_TOKEN"),
-                "chat_id": os.environ.get("TELEGRAM_CHAT_ID")
+                "bot_token": os.getenv("TELEGRAM_BOT_TOKEN"),
+                "chat_id": os.getenv("TELEGRAM_CHAT_ID")
+            },
+            "linkedin": {
+                "email": os.getenv("LINKEDIN_EMAIL"),
+                "password": os.getenv("LINKEDIN_PASSWORD")
             }
         }
         
         # Merge dictionaries
-        for provider, values in env_secrets.items():
+        for provider, values in env_mapping.items():
             if provider not in secrets_data:
                 secrets_data[provider] = {}
             for k, v in values.items():

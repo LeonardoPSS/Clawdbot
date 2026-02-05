@@ -59,6 +59,12 @@ class JobSearcher:
             else:
                 raise
         
+        # Open a new page and navigate to Google to avoid blank screen
+        self.page = self.context.new_page()
+        try:
+            self.page.goto("https://www.google.com")
+        except: pass
+        
         self.page = self.context.pages[0] if self.context.pages else self.context.new_page()
         
         # Apply stealth to the page
@@ -244,6 +250,53 @@ class JobSearcher:
             except:
                 continue
         return False
+
+    def activate_antigravity_mode(self):
+        """
+        Activates the 'Google Gravity' experiment and causes chaos.
+        Authorized by user for fun/demo purposes.
+        """
+        if not self.page:
+            logger.warning("Browser not started. Starting for Antigravity...")
+            self.start_browser()
+            
+        logger.info("🌌 ACTIVATING ANTIGRAVITY PROTOCOLS...")
+        try:
+            # 1. Navigate to Google Gravity
+            url = "https://mrdoob.com/projects/chromeexperiments/google-gravity/"
+            self.page.goto(url)
+            time.sleep(2)
+            
+            # 2. Click to trigger gravity
+            # The experiment usually waits for a click or movement to activate 
+            self.page.mouse.click(640, 360) # Click center
+            time.sleep(1)
+            
+            # 3. Create Chaos (Drag and Drop simulation)
+            viewport_size = self.page.viewport_size
+            width = viewport_size['width']
+            height = viewport_size['height']
+            
+            for _ in range(20): # 20 random throws
+                start_x = random.randint(100, width - 100)
+                start_y = random.randint(100, height - 100)
+                end_x = random.randint(100, width - 100)
+                end_y = random.randint(100, height - 100)
+                
+                # Drag...
+                self.page.mouse.move(start_x, start_y)
+                self.page.mouse.down()
+                # ...and Throw! (Fast move)
+                self.page.mouse.move(end_x, end_y, steps=5) 
+                self.page.mouse.up()
+                
+                time.sleep(0.5)
+                
+            logger.info("Antigravity chaos complete.")
+            
+        except Exception as e:
+            logger.error(f"Antigravity failed: {e}")
+
 
 
     def run(self):

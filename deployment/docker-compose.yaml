@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  clawdbot:
+    build:
+      context: ..
+      dockerfile: deployment/Dockerfile
+    container_name: clawdbot_vps
+    restart: always
+    env_file:
+      - ../.env
+    environment:
+      - HEADLESS_MODE=true
+    volumes:
+      - ../data:/app/data
+      - ../config:/app/config
+      - ../logs:/app/logs
+      - ../src:/app/src
+
+  autopilot:
+    build:
+      context: ..
+      dockerfile: deployment/Dockerfile
+    container_name: nexara_autopilot
+    command: python nexara_autopilot.py
+    restart: always
+    env_file:
+      - ../.env
+    volumes:
+      - ../data:/app/data
+      - ../src:/app/src
+      - ../config:/app/config
+
+  dashboard:
+    build:
+      context: ..
+      dockerfile: deployment/Dockerfile
+    container_name: nexara_dashboard
+    command: python dashboard_server.py
+    restart: always
+    ports:
+      - "5005:5005"
+    volumes:
+      - ../data:/app/data
+      - ../src:/app/src
+      - ../dashboard.html:/app/dashboard.html
+      - ../dashboard_server.py:/app/dashboard_server.py

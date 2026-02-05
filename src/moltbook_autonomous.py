@@ -135,7 +135,8 @@ class MoltbookBot:
             try:
                 with open(self.last_post_file, "r") as f:
                     history = json.load(f)
-            except:
+            except Exception as e:
+                logger.warning(f"Failed to load post history: {e}")
                 history = {}
         
         posted_today = history.get(today_str, [])

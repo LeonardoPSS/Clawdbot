@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXARA | Control Tower</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg: #050510;
+            --glass: rgba(15, 15, 40, 0.7);
+            --primary: #00f2ff;
+            --accent: #22ff22;
+            --text: #e0e0f0;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Rajdhani', sans-serif;
+            margin: 0;
+            overflow-x: hidden;
+            background-image: radial-gradient(circle at 50% 50%, #101030 0%, #050510 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(0, 242, 255, 0.3);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            margin: 0;
+            letter-spacing: 4px;
+            color: var(--primary);
+            text-shadow: 0 0 15px rgba(0, 242, 255, 0.5);
+        }
+
+        .badge {
+            background: var(--primary);
+            color: #000;
+            padding: 5px 15px;
+            font-weight: bold;
+            border-radius: 4px;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+        }
+
+        .card h2 {
+            margin-top: 0;
+            font-size: 1.2rem;
+            color: var(--primary);
+            text-transform: uppercase;
+        }
+
+        .stats-main {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .stat-item .label {
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        .stat-item .value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            font-family: 'Orbitron', sans-serif;
+            color: var(--accent);
+        }
+
+        .position-list {
+            margin-top: 20px;
+        }
+
+        .pos-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 15px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            margin-bottom: 10px;
+            border-left: 3px solid var(--primary);
+        }
+
+        .pos-title {
+            font-weight: 500;
+            font-size: 1rem;
+        }
+
+        .pos-roi {
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        .skills-feed {
+            font-size: 0.9rem;
+        }
+
+        .skill-item {
+            padding: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .pulse {
+            width: 8px;
+            height: 8px;
+            background: var(--primary);
+            border-radius: 50%;
+            box-shadow: 0 0 8px var(--primary);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                opacity: 0.4;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0.4;
+            }
+        }
+
+        .footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #555;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>NEXARA <span style="font-weight: 300;">GENESIS</span></h1>
+            <div class="badge" id="status-tag">Autopilot: Active</div>
+        </header>
+
+        <div class="grid">
+            <div class="card">
+                <h2>Neural Wealth Center</h2>
+                <div class="stats-main">
+                    <div class="stat-item">
+                        <div class="label">Total Balance</div>
+                        <div class="value" id="balance">$0.00</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="label">Neural Assets</div>
+                        <div class="value" id="asset-count">0</div>
+                    </div>
+                </div>
+
+                <h3>Active Positions</h3>
+                <div class="position-list" id="pos-container">
+                    <!-- Positions injected here -->
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>SaaS Factory Output</h2>
+                <div class="skills-feed" id="skills-container">
+                    <!-- Skills injected here -->
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            SYSTEM STATUS: ONLINE | VERSION: 2.0.4 EX | CODENAME: GENESIS
+        </div>
+    </div>
+
+    <script>
+        async function updateDashboard() {
+            try {
+                const res = await fetch('/api/status');
+                const data = await res.json();
+
+                document.getElementById('balance').innerText = '$' + data.wealth.balance.toFixed(2);
+                document.getElementById('asset-count').innerText = data.wealth.active_positions.length;
+
+                // Render Positions
+                const posContainer = document.getElementById('pos-container');
+                posContainer.innerHTML = '';
+                data.wealth.active_positions.forEach(pos => {
+                    posContainer.innerHTML += `
+                        <div class="pos-item">
+                            <div class="pos-title">${pos.title.substring(0, 45)}...</div>
+                            <div class="pos-roi">+${pos.roi.toFixed(2)}%</div>
+                        </div>
+                    `;
+                });
+
+                // Render Skills
+                const skillContainer = document.getElementById('skills-container');
+                skillContainer.innerHTML = '';
+                data.skills.forEach(s => {
+                    skillContainer.innerHTML += `
+                        <div class="skill-item">
+                            <div class="pulse"></div>
+                            <div>${s.name} <span style="color:#555"> (Active)</span></div>
+                        </div>
+                    `;
+                });
+
+            } catch (err) {
+                console.error("Failed to sync with Nexara brain.");
+            }
+        }
+
+        updateDashboard();
+        setInterval(updateDashboard, 5000); // 5s SYNC
+    </script>
+</body>
+
+</html>

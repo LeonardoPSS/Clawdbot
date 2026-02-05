@@ -2,8 +2,11 @@ bot:
   name: AntigravityJobBot
   mode: automatic   # automatic | semi-automatic
   daily_application_limit: 10
+  daily_application_limit: 10
   headless: false
 
+ai:
+  model: "gpt-4o" # Change this to "gpt-5.2" or "o1-preview" if available to you
 
 
 profile:
@@ -52,8 +55,7 @@ resume:
 
 platforms:
   linkedin:
-    enabled: true
-    auto_apply: true
+    enabled: false  # DISABLED - User requested no LinkedIn access
   gupy:
     enabled: false
   vagas_com:

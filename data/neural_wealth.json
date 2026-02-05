@@ -1,12 +1,12 @@
 {
-    "balance": 400.0,
+    "balance": 200.0,
     "total_roi": 0.0,
     "active_positions": [
         {
             "title": "Overcoming Top Pain Points for Small Business Owners with Gravity",
             "entry_price": 100.0,
-            "current_value": 100.0,
-            "roi": 0.0,
+            "current_value": 104.24764902556183,
+            "roi": 4.247649025561827,
             "entry_time": "2026-02-01T22:12:48.904410",
             "sentiment": "Bullish",
             "score": 50
@@ -14,8 +14,8 @@
         {
             "title": "The 12 Best AI Agents in 2026: Tested & Reviewed | Lindy",
             "entry_price": 100.0,
-            "current_value": 100.0,
-            "roi": 0.0,
+            "current_value": 112.35551728701572,
+            "roi": 12.355517287015715,
             "entry_time": "2026-02-01T22:12:48.904410",
             "sentiment": "Bullish",
             "score": 50
@@ -23,8 +23,8 @@
         {
             "title": "Top 100 Best AI Projects on GitHub | 2026 | AIxploria",
             "entry_price": 100.0,
-            "current_value": 100.0,
-            "roi": 0.0,
+            "current_value": 105.93687257652871,
+            "roi": 5.936872576528714,
             "entry_time": "2026-02-01T22:12:48.904410",
             "sentiment": "Bullish",
             "score": 50
@@ -32,8 +32,8 @@
         {
             "title": "Top Trending GitHub Projects This Week Part-1 : Open Source AI, Automation & Dev Tools - YouTube",
             "entry_price": 100.0,
-            "current_value": 100.0,
-            "roi": 0.0,
+            "current_value": 104.24215921003841,
+            "roi": 4.242159210038409,
             "entry_time": "2026-02-01T22:12:48.904410",
             "sentiment": "Bullish",
             "score": 50
@@ -41,8 +41,8 @@
         {
             "title": "Top Trending GitHub Projects This Week Part-2 : Open Source AI, Dev Tools & Automation - YouTube",
             "entry_price": 100.0,
-            "current_value": 100.0,
-            "roi": 0.0,
+            "current_value": 106.20897887542053,
+            "roi": 6.208978875420527,
             "entry_time": "2026-02-01T22:12:48.904410",
             "sentiment": "Bullish",
             "score": 50
@@ -50,9 +50,27 @@
         {
             "title": "Top Trending GitHub Projects This Week: Open Source AI, Dev Tools & Automation #218 - YouTube",
             "entry_price": 100.0,
-            "current_value": 100.0,
-            "roi": 0.0,
+            "current_value": 102.83928544005967,
+            "roi": 2.839285440059669,
             "entry_time": "2026-02-01T22:12:48.904410",
+            "sentiment": "Bullish",
+            "score": 50
+        },
+        {
+            "title": "artificial-intelligence-projects \u00b7 GitHub Topics \u00b7 GitHub",
+            "entry_price": 100.0,
+            "current_value": 103.4924527989987,
+            "roi": 3.4924527989986984,
+            "entry_time": "2026-02-04T20:56:37.245481",
+            "sentiment": "Bullish",
+            "score": 50
+        },
+        {
+            "title": "Trending Open-Source Github Projects #226 : Remotion, AionUi, OpenCode, UltraRAG & Memos - YouTube",
+            "entry_price": 100.0,
+            "current_value": 106.10655317924954,
+            "roi": 6.106553179249545,
+            "entry_time": "2026-02-04T20:56:37.245481",
             "sentiment": "Bullish",
             "score": 50
         }

@@ -110,8 +110,12 @@ class LinkedInManager:
                 "button:has-text('Começar publicação')",
                 "span:has-text('Começar publicação')",
                 "button:has-text('Start a post')",
+                "span:has-text('Start a post')",
                 "div[role='button']:has-text('Começar publicação')",
-                ".artdeco-button--tertiary.share-box-feed-entry__trigger"
+                "div[role='button']:has-text('Start a post')",
+                ".artdeco-button--tertiary.share-box-feed-entry__trigger",
+                "button[aria-label='Começar publicação']",
+                "button[aria-label='Start a post']"
             ]
             
             post_trigger = None
