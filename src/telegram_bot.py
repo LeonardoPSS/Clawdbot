@@ -1,5 +1,6 @@
 import logging
 import threading
+from datetime import datetime
 import time
 import urllib.request
 import urllib.parse
@@ -185,7 +186,26 @@ class TelegramBot:
         elif command == "/status":
             response = "📊 O bot está rodando normalmente. Verifique o terminal para logs detalhados."
         elif command == "/ping":
-            response = "Pong! 🏓"
+            response = "Pong! 🏓 Estou ouvindo."
+
+        elif command == "/system":
+            if self.desktop_agent:
+                response = self.desktop_agent.get_system_stats()
+            else:
+                response = "⚠️ Agente Desktop indisponível."
+
+        elif command == "/note":
+            content = text.replace("/note", "", 1).strip()
+            if not content:
+                response = "⚠️ Uso: `/note <texto>` para salvar uma nota."
+            else:
+                try:
+                    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M")
+                    with open("data/notes.md", "a", encoding="utf-8") as f:
+                        f.write(f"\n- [{timestamp}] {content}")
+                    response = f"📝 Nota salva: '_{content}_'"
+                except Exception as e:
+                    response = f"❌ Erro ao salvar nota: {e}"
 
         elif command == "/speak":
             msg = text.replace("/speak", "", 1).strip()
@@ -482,6 +502,16 @@ class TelegramBot:
             "Your personality is distinct: Analytical yet Creative, Loyal, and Evolving. "
             "Answer with depth and precision. You are not a generic assistant; you are a Partner."
         )
+        
+        # Inject System Context (Lightweight)
+        if self.desktop_agent:
+            try:
+                import psutil
+                cpu = psutil.cpu_percent()
+                bat = psutil.sensors_battery()
+                bat_str = f"{bat.percent}%" if bat else "AC"
+                system_prompt += f"\n[SYSTEM STATUS] CPU: {cpu}% | Power: {bat_str}"
+            except: pass
         
         # Update history with user message
         self.chat_history.append({"role": "user", "content": text})

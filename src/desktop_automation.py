@@ -273,6 +273,30 @@ class DesktopAgent:
                 return f"Failed to save knowledge: {e}"
         return f"Could not generate facts about {topic}."
 
+    def get_system_stats(self) -> str:
+        """Returns a formatted string of system statistics."""
+        try:
+            cpu = psutil.cpu_percent(interval=0.5)
+            ram = psutil.virtual_memory()
+            battery = psutil.sensors_battery()
+            
+            status = f"🖥️ **System Status**\n"
+            status += f"🧠 CPU: {cpu}%\n"
+            status += f"💾 RAM: {ram.percent}% ({round(ram.used / (1024**3), 1)}GB / {round(ram.total / (1024**3), 1)}GB)\n"
+            
+            if battery:
+                plugged = "🔌 Plugged" if battery.power_plugged else "🔋 Battery"
+                status += f"{plugged}: {battery.percent}%"
+                if not battery.power_plugged and battery.secsleft != psutil.POWER_TIME_UNLIMITED:
+                    mins_left = int(battery.secsleft / 60)
+                    status += f" (~{mins_left}m left)"
+            else:
+                status += "🔌 Power: AC (No Battery Detected)"
+                
+            return status
+        except Exception as e:
+            return f"❌ Failed to get system stats: {e}"
+
 
     def perform_linkedin_boost(self) -> str:
         """
