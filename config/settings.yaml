@@ -3,50 +3,40 @@ bot:
   mode: automatic   # automatic | semi-automatic
   daily_application_limit: 10
   daily_application_limit: 10
-  headless: true
+  headless: false
 
 ai:
   model: "gpt-4o" # Change this to "gpt-5.2" or "o1-preview" if available to you
 
 
 profile:
-  role: "Estágio Administrativo"
-  level: "Estágio"
-  area: "Administrativo"
+  role: "Freelancer Python Developer"
+  level: "Freelancer"
+  area: "Tecnologia"
   locations:
-    - "São Paulo"
-    - "Osasco"
-    - "Guarulhos"
-    - "Santo André"
-    - "São Bernardo do Campo"
     - "Remoto"
+    - "São Paulo"
   keywords:
     include:
-      - administrativo
-      - estagi
-      - assistente
-      - financeiro
-      - escritorio
-      - auxiliar
-      - suporte
-      - recepcao
-      - atendimento
-      - backoffice
-      - excel
-      - operacional
-      - faturamento
+      - python
+      - freelance
+      - automação
+      - bot
+      - rpa
+      - scraping
+      - dados
+      - web scraping
+      - script
+      - programador
+      - desenvolvedor
     exclude:
-      - vendas
-      - comissionado
-      - PJ
       - senior
-      - pleno
-      - direito
-      - advocacia
-      - comercial
-      - corretor
-      - PCD
-      - deficiencia
+      - especialista
+      - java
+      - c#
+      - .net
+      - presencial
+      - híbrido
 
 resume:
   file_path: "./assets/curriculo.pdf"

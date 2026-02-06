@@ -1,28 +1,23 @@
-# 🤖 Antigravity Job Bot
+# 🌌 Nexara (Antigravity Bot)
 
-O **Antigravity Job Bot** é um assistente autônomo e inteligente projetado para automatizar a busca e candidatura a vagas de emprego, imitando o comportamento humano para garantir segurança e eficiência.
+**Nexara** é uma Inteligência Digital Pessoal projetada para rodar localmente no seu PC, oferecendo automação, controle e companhia. Originalmente um bot de empregos, ela evoluiu para um assistente persistente e autônomo.
 
-## ✨ Funcionalidades
+## ✨ Funcionalidades Principais
 
-- **Configuração Flexível**: Defina cargos, localizações e palavras-chave obrigatórias/proibidas no `settings.yaml`.
-- **Leitura de Currículo**: Extração automática de dados de arquivos PDF e DOCX (testado com sucesso).
-- **Busca Inteligente**: Varredura no LinkedIn (Guest Mode) para encontrar vagas recentes sem necessidade de login imediato.
-- **Comportamento Humano**: Delays aleatórios, simulação de rolagem (smooth scroll) e movimentos de mouse para evitar detecção.
-- **Log e Controle**: Registro de todas as ações em um banco de dados CSV (`data/applied.csv`).
-- **Dashboard**: Visualização rápida de estatísticas e status das candidaturas.
+- **🧠 Assistente Sempre Online**: Roda em segundo plano e responde instantaneamente no Telegram (`/ping`, `/start`).
+- **💬 Chatbot Persistente**: Converse com a Nexara a qualquer momento sem abrir janelas pesadas.
+- **🖥️ Controle do PC**: Execute comandos, abra programas e tire screenshots remotamente (via comandos `/pc`).
+- **🛡️ Modo Seguro**: Busca de vagas e automações de LinkedIn desativadas por padrão para foco total em assistência.
+- **🚀 Inicialização Automática**: Se integra ao Windows Task Scheduler para iniciar junto com o sistema.
 
 ## 📁 Estrutura do Projeto
 
-- `src/config.py`: Validação e carregamento das configurações (Pydantic).
-- `src/resume_parser.py`: Leitura e extração de informações do currículo.
-- `src/job_searcher.py`: Automação da busca de vagas (Playwright).
-- `src/applicant.py`: Lógica de visita e "inscrição" nas vagas.
-- `src/behavior.py`: Simulador de comportamento humano.
-- `src/storage.py`: Persistência de dados das candidaturas.
-- `src/main.py`: Orquestrador principal do bot.
-- `dashboard.py`: Script para visualização do status do bot.
+- `bot_manager.py`: Gerenciador de inicialização (Monitora e reinicia o bot se necessário).
+- `run_telegram_bot.py`: Núcleo leve da Nexara (Chatbot Only).
+- `src/main.py`: Núcleo completo (com navegador) - *Opcional*.
+- `config/settings.yaml`: Central de controle e preferências.
 
-## 🚀 Como Usar
+## 🚀 Instalação e Uso
 
 1. **Instale as dependências**:
    ```bash
@@ -30,29 +25,23 @@ O **Antigravity Job Bot** é um assistente autônomo e inteligente projetado par
    playwright install chromium
    ```
 
-2. **Configure seu perfil**:
-   Edite o arquivo `config/settings.yaml` com suas preferências de vaga.
+2. **Configure**:
+   - Renomeie `.env.example` para `.env` e adicione seu Token do Telegram.
+   - Ajuste o `config/settings.yaml` conforme necessário.
 
-3. **Adicione seu currículo**:
-   Coloque seu currículo em PDF na pasta `assets` e aponte o caminho no `settings.yaml`.
-
-4. **Execute o Bot**:
-   ```bash
-   python -m src.main
+3. **Inicie a Nexara**:
+   Para rodar e configurar a inicialização automática no Windows:
+   ```powershell
+   ./start_bot.ps1
    ```
+   *Ela iniciará silenciosamente e enviará uma mensagem no Telegram quando estiver pronta.*
 
-5. **Veja os resultados**:
-   ```bash
-   python dashboard.py
-   ```
+## 🛠️ Comandos do Telegram
 
-## 🛠️ Tecnologias
-- **Python 3.10+**
-- **Playwright** (Automação de Browser)
-- **Pydantic** (Validação de Dados)
-- **PyYAML** (Configuração)
-- **PDFMiner / Python-Docx** (Processamento de documentos)
-- **Pandas** (Análise de dados para Dashboard)
+- `/ping`: Verifica se a Nexara está ouvindo.
+- `/pc <comando>`: Executa um comando no terminal do PC.
+- `/look`: Pede para a Nexara "olhar" a tela (screenshot + análise).
+- `/room <cena>`: Controla dispositivos inteligentes (se configurado).
 
 ---
-*Desenvolvido com ❤️ por Antigravity.*
+*Evoluindo a cada dia.* 🌟

@@ -82,6 +82,7 @@ def main():
 
     logger.info("Starting Antigravity Job Bot 🚀")
     
+    desktop_agent = None
     searcher = None
     
     global telegram_bot
@@ -250,6 +251,12 @@ def main():
                 jobs = []
                 if config.platforms.linkedin.enabled:
                     jobs.extend(searcher.search_linkedin())
+                
+                if config.platforms.gupy.enabled:
+                    jobs.extend(searcher.search_gupy())
+
+                if config.platforms.vagas_com.enabled:
+                    jobs.extend(searcher.search_vagas())
                     
                 logger.info(f"Found {len(jobs)} total potential jobs across platforms.")
 
@@ -304,14 +311,9 @@ def main():
     except KeyboardInterrupt:
         logger.info("Bot stopped by user.")
     except Exception as e:
-        global LATENT_ERROR
-        LATENT_ERROR = str(e)
         logger.critical(f"❌ BOT CRASHED: {e}")
-        logger.info("⚠️ Entering SAFE MODE (Loop) to keep Diagnostics Server alive...")
-        try:
-            while True:
-                time.sleep(60)
-        except: pass
+        # Local mode: Exit to show error in terminal
+        raise e
 
     finally:
         if not config.bot.headless:

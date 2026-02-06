@@ -18,15 +18,19 @@ def start_bot():
     while True:
         try:
             print(f"\n[Manager] Launching bot instance...")
+            print(f"[Manager] CWD: {os.getcwd()}")
+            if not os.path.exists("run_telegram_bot.py"):
+                print("❌ ERROR: run_telegram_bot.py not found!")
+            
             # Run the bot and wait for it to complete/crash
-            process = subprocess.run([sys.executable, "-m", "src.main"], check=False)
+            process = subprocess.run([sys.executable, "run_telegram_bot.py"], check=False)
             
             # Check exit code
             if process.returncode == 0:
                 print(f"[Manager] Bot finished gracefully. Restarting in 60s...")
             else:
                 print(f"[Manager] Bot crashed with code {process.returncode}. Restarting in 60s...")
-                
+            
             time.sleep(60)
             
         except KeyboardInterrupt:
