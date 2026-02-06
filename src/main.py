@@ -16,6 +16,7 @@ from src.linkedin_manager import LinkedInManager
 from src.auth import Authenticator
 from src.telegram_bot import TelegramBot
 from src.moltbook_autonomous import MoltbookBot
+from src.desktop_automation import DesktopAgent
 
 # Configure logging to stdout
 logging.basicConfig(
@@ -148,21 +149,25 @@ def main():
         desktop_agent = DesktopAgent(config, linkedin_manager=None)
         
         # Update Telegram Bot with shared instances
-        telegram_bot.job_searcher = searcher
-        telegram_bot.desktop_agent = desktop_agent
+        if telegram_bot:
+            telegram_bot.job_searcher = searcher
+            telegram_bot.desktop_agent = desktop_agent
+        else:
+            logger.warning("⚠️ Telegram Bot unavailable. Continuing without chat control.")
         
         # AUTO-START AUTONOMOUS MODE
         if config.bot.mode == "automatic":
-             def telegram_callback(msg):
-                 if telegram_bot and telegram_bot.allowed_chat_id:
-                     telegram_bot.send_message(telegram_bot.allowed_chat_id, msg)
-             
-             logger.info("🧠 Auto-starting Autonomous Loop...")
-             desktop_agent.start_autonomous_loop(telegram_callback)
+            def telegram_callback(msg):
+                if telegram_bot and telegram_bot.allowed_chat_id:
+                    telegram_bot.send_message(telegram_bot.allowed_chat_id, msg)
+
+            logger.info("🧠 Auto-starting Autonomous Loop...")
+            desktop_agent.start_autonomous_loop(telegram_callback)
         
         # AUTO-START AUTONOMY AS REQUESTED BY USER
-        logger.info("🤖 Auto-starting Autonomous Mode...")
-        telegram_bot.enable_autonomous_mode()
+        if telegram_bot:
+            logger.info("🤖 Auto-starting Autonomous Mode...")
+            telegram_bot.enable_autonomous_mode()
         
         # Initialize stats and counts from storage
         stats = {
